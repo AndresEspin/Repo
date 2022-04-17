@@ -1,0 +1,659 @@
+Prefix(:=<http://www.semanticweb.org/andres/ontologies/2022/3/OntologyTvSeries#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/andres/ontologies/2022/3/OntologyTvSeries>
+Annotation(rdfs:comment "Ontology of TvSeries
+Author: Andres Espin Rearte")
+
+Declaration(Class(:Actor))
+Declaration(Class(:Agent))
+Declaration(Class(:AnimationSerie))
+Declaration(Class(:Award))
+Declaration(Class(:CastMember))
+Declaration(Class(:CinemaAward))
+Declaration(Class(:ComedySerie))
+Declaration(Class(:Company))
+Declaration(Class(:Composer))
+Declaration(Class(:Country))
+Declaration(Class(:CreativeWork))
+Declaration(Class(:Director))
+Declaration(Class(:DramaSerie))
+Declaration(Class(:EmmyAward))
+Declaration(Class(:GlaadMediaAward))
+Declaration(Class(:LeadRole))
+Declaration(Class(:Localization))
+Declaration(Class(:NonCastMember))
+Declaration(Class(:NonProfitOrganization))
+Declaration(Class(:Organization))
+Declaration(Class(:Person))
+Declaration(Class(:RealitySerie))
+Declaration(Class(:Role))
+Declaration(Class(:Singer))
+Declaration(Class(:Song))
+Declaration(Class(:Soundtrack))
+Declaration(Class(:SupportingRole))
+Declaration(Class(:TerrorSerie))
+Declaration(Class(:ThrillerSerie))
+Declaration(Class(:TvAward))
+Declaration(Class(:TvProducer))
+Declaration(Class(:TvSerie))
+Declaration(Class(:TvSerieChapter))
+Declaration(Class(:TvSerieSeason))
+Declaration(Class(:Writer))
+Declaration(ObjectProperty(:ActsAs))
+Declaration(ObjectProperty(:ActsIn))
+Declaration(ObjectProperty(:Directs))
+Declaration(ObjectProperty(:GivesAward))
+Declaration(ObjectProperty(:IsProducedBy))
+Declaration(ObjectProperty(:Produces))
+Declaration(ObjectProperty(:WorksIn))
+Declaration(ObjectProperty(:Writes))
+Declaration(ObjectProperty(:hasASecondaryCharacter))
+Declaration(ObjectProperty(:hasAsACharacter))
+Declaration(ObjectProperty(:hasAsAMainCharacter))
+Declaration(ObjectProperty(:hasWon))
+Declaration(ObjectProperty(:includesSong))
+Declaration(ObjectProperty(:isACharacterOf))
+Declaration(ObjectProperty(:isDirectedBy))
+Declaration(ObjectProperty(:isGivenBy))
+Declaration(ObjectProperty(:isInterpretedBy))
+Declaration(ObjectProperty(:isWrittenBy))
+Declaration(DataProperty(:BirthDate))
+Declaration(DataProperty(:Name))
+Declaration(DataProperty(:NameAgent))
+Declaration(DataProperty(:NameRole))
+Declaration(DataProperty(:NumberChapters))
+Declaration(DataProperty(:NumberSeasons))
+Declaration(DataProperty(:ReleaseDate))
+Declaration(DataProperty(:Surname))
+Declaration(DataProperty(:SurnamePerson))
+Declaration(DataProperty(:SurnameRole))
+Declaration(DataProperty(:Title))
+Declaration(DataProperty(:TitleAward))
+Declaration(DataProperty(:TitleChapter))
+Declaration(DataProperty(:TitleSerie))
+Declaration(DataProperty(:TitleSong))
+Declaration(DataProperty(:YearAwarded))
+Declaration(NamedIndividual(:Alvaro_Rico))
+Declaration(NamedIndividual(:Carlos_Montero))
+Declaration(NamedIndividual(:CharlieXCX))
+Declaration(NamedIndividual(:Dani_de_la_Orden))
+Declaration(NamedIndividual(:Elite))
+Declaration(NamedIndividual(:EliteSeason1))
+Declaration(NamedIndividual(:EliteSeason2))
+Declaration(NamedIndividual(:EliteSeason3))
+Declaration(NamedIndividual(:EliteSeason4))
+Declaration(NamedIndividual(:EliteSeason5))
+Declaration(NamedIndividual(:GLAAD))
+Declaration(NamedIndividual(:GlaadMediaAward_2019_MejorGuion))
+Declaration(NamedIndividual(:Itzan_Escamilla))
+Declaration(NamedIndividual(:Manu_Rios))
+Declaration(NamedIndividual(:Maria_Pedraza))
+Declaration(NamedIndividual(:Marina))
+Declaration(NamedIndividual(:Omar))
+Declaration(NamedIndividual(:Omar_Ayuso))
+Declaration(NamedIndividual(:Patrick))
+Declaration(NamedIndividual(:Polo))
+Declaration(NamedIndividual(:Samuel))
+Declaration(NamedIndividual(:T01_E01_·_Episodio_1))
+Declaration(NamedIndividual(:T05_E01_._Yo_lo_mate))
+Declaration(NamedIndividual(:T05_E02_._Todo_vale))
+Declaration(NamedIndividual(:T05_E03_._Atame))
+Declaration(NamedIndividual(:T05_E04_._El_cuerpo))
+Declaration(NamedIndividual(:ZetaStudiosProductions))
+Declaration(NamedIndividual(<http://www.semanticweb.org/andres/ontologies/2022/3/OntologyTvSeries#5_in_the_morning>))
+Declaration(AnnotationProperty(rdfs:sameAs))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: rdfs:sameAs (rdfs:sameAs)
+
+SubAnnotationPropertyOf(rdfs:sameAs rdfs:comment)
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :ActsAs (:ActsAs)
+
+SubObjectPropertyOf(:ActsAs owl:topObjectProperty)
+InverseObjectProperties(:ActsAs :isInterpretedBy)
+ObjectPropertyDomain(:ActsAs :Actor)
+ObjectPropertyRange(:ActsAs :Role)
+
+# Object Property: :ActsIn (:ActsIn)
+
+SubObjectPropertyOf(:ActsIn :WorksIn)
+ObjectPropertyDomain(:ActsIn :Actor)
+ObjectPropertyRange(:ActsIn :TvSerieChapter)
+
+# Object Property: :Directs (:Directs)
+
+SubObjectPropertyOf(:Directs :WorksIn)
+InverseObjectProperties(:Directs :isDirectedBy)
+ObjectPropertyDomain(:Directs :Director)
+ObjectPropertyRange(:Directs :TvSerieChapter)
+
+# Object Property: :GivesAward (:GivesAward)
+
+SubObjectPropertyOf(:GivesAward owl:topObjectProperty)
+InverseObjectProperties(:GivesAward :isGivenBy)
+ObjectPropertyDomain(:GivesAward :Organization)
+ObjectPropertyRange(:GivesAward :Award)
+
+# Object Property: :IsProducedBy (:IsProducedBy)
+
+InverseObjectProperties(:IsProducedBy :Produces)
+ObjectPropertyDomain(:IsProducedBy :TvSerie)
+ObjectPropertyRange(:IsProducedBy :TvProducer)
+
+# Object Property: :Produces (:Produces)
+
+ObjectPropertyDomain(:Produces :TvProducer)
+ObjectPropertyRange(:Produces :TvSerie)
+
+# Object Property: :WorksIn (:WorksIn)
+
+SubObjectPropertyOf(:WorksIn owl:topObjectProperty)
+ObjectPropertyDomain(:WorksIn :Person)
+ObjectPropertyRange(:WorksIn :CreativeWork)
+
+# Object Property: :Writes (:Writes)
+
+SubObjectPropertyOf(:Writes :WorksIn)
+InverseObjectProperties(:Writes :isWrittenBy)
+ObjectPropertyDomain(:Writes :Writer)
+ObjectPropertyRange(:Writes :TvSerieChapter)
+
+# Object Property: :hasASecondaryCharacter (:hasASecondaryCharacter)
+
+SubObjectPropertyOf(:hasASecondaryCharacter :hasAsACharacter)
+ObjectPropertyDomain(:hasASecondaryCharacter :TvSerieChapter)
+ObjectPropertyRange(:hasASecondaryCharacter :SupportingRole)
+
+# Object Property: :hasAsACharacter (:hasAsACharacter)
+
+SubObjectPropertyOf(:hasAsACharacter owl:topObjectProperty)
+InverseObjectProperties(:hasAsACharacter :isACharacterOf)
+ObjectPropertyDomain(:hasAsACharacter :TvSerieChapter)
+ObjectPropertyRange(:hasAsACharacter :Role)
+
+# Object Property: :hasAsAMainCharacter (:hasAsAMainCharacter)
+
+SubObjectPropertyOf(:hasAsAMainCharacter :hasAsACharacter)
+ObjectPropertyDomain(:hasAsAMainCharacter :TvSerieChapter)
+ObjectPropertyRange(:hasAsAMainCharacter :LeadRole)
+
+# Object Property: :hasWon (:hasWon)
+
+SubObjectPropertyOf(:hasWon owl:topObjectProperty)
+ObjectPropertyDomain(:hasWon :CreativeWork)
+ObjectPropertyRange(:hasWon :Award)
+
+# Object Property: :includesSong (:includesSong)
+
+SubObjectPropertyOf(:includesSong owl:topObjectProperty)
+ObjectPropertyDomain(:includesSong :Soundtrack)
+ObjectPropertyRange(:includesSong :Song)
+
+# Object Property: :isACharacterOf (:isACharacterOf)
+
+ObjectPropertyDomain(:isACharacterOf :Role)
+ObjectPropertyRange(:isACharacterOf :TvSerieChapter)
+
+# Object Property: :isDirectedBy (:isDirectedBy)
+
+SubObjectPropertyOf(:isDirectedBy owl:topObjectProperty)
+ObjectPropertyDomain(:isDirectedBy :TvSerieChapter)
+ObjectPropertyRange(:isDirectedBy :Director)
+
+# Object Property: :isGivenBy (:isGivenBy)
+
+SubObjectPropertyOf(:isGivenBy owl:topObjectProperty)
+ObjectPropertyDomain(:isGivenBy :Award)
+ObjectPropertyRange(:isGivenBy :Organization)
+
+# Object Property: :isInterpretedBy (:isInterpretedBy)
+
+SubObjectPropertyOf(:isInterpretedBy owl:topObjectProperty)
+ObjectPropertyDomain(:isInterpretedBy :Role)
+ObjectPropertyRange(:isInterpretedBy :Actor)
+
+# Object Property: :isWrittenBy (:isWrittenBy)
+
+SubObjectPropertyOf(:isWrittenBy owl:topObjectProperty)
+ObjectPropertyDomain(:isWrittenBy :TvSerieChapter)
+ObjectPropertyRange(:isWrittenBy :Writer)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :BirthDate (:BirthDate)
+
+SubDataPropertyOf(:BirthDate owl:topDataProperty)
+DataPropertyDomain(:BirthDate :Person)
+DataPropertyRange(:BirthDate xsd:dateTime)
+
+# Data Property: :Name (:Name)
+
+SubDataPropertyOf(:Name owl:topDataProperty)
+FunctionalDataProperty(:Name)
+DataPropertyRange(:Name xsd:string)
+
+# Data Property: :NameAgent (:NameAgent)
+
+SubDataPropertyOf(:NameAgent :Name)
+FunctionalDataProperty(:NameAgent)
+DataPropertyDomain(:NameAgent :Agent)
+DataPropertyRange(:NameAgent xsd:string)
+
+# Data Property: :NameRole (:NameRole)
+
+SubDataPropertyOf(:NameRole :Name)
+FunctionalDataProperty(:NameRole)
+DataPropertyDomain(:NameRole :Role)
+DataPropertyRange(:NameRole xsd:string)
+
+# Data Property: :NumberChapters (:NumberChapters)
+
+SubDataPropertyOf(:NumberChapters owl:topDataProperty)
+FunctionalDataProperty(:NumberChapters)
+DataPropertyDomain(:NumberChapters :TvSerieSeason)
+DataPropertyRange(:NumberChapters xsd:int)
+
+# Data Property: :NumberSeasons (:NumberSeasons)
+
+SubDataPropertyOf(:NumberSeasons owl:topDataProperty)
+FunctionalDataProperty(:NumberSeasons)
+DataPropertyDomain(:NumberSeasons :TvSerie)
+DataPropertyRange(:NumberSeasons xsd:int)
+
+# Data Property: :ReleaseDate (:ReleaseDate)
+
+SubDataPropertyOf(:ReleaseDate owl:topDataProperty)
+FunctionalDataProperty(:ReleaseDate)
+DataPropertyDomain(:ReleaseDate :CreativeWork)
+DataPropertyRange(:ReleaseDate xsd:dateTime)
+
+# Data Property: :Surname (:Surname)
+
+SubDataPropertyOf(:Surname owl:topDataProperty)
+DataPropertyRange(:Surname xsd:string)
+
+# Data Property: :SurnamePerson (:SurnamePerson)
+
+SubDataPropertyOf(:SurnamePerson :Surname)
+FunctionalDataProperty(:SurnamePerson)
+
+# Data Property: :SurnameRole (:SurnameRole)
+
+SubDataPropertyOf(:SurnameRole :Surname)
+FunctionalDataProperty(:SurnameRole)
+
+# Data Property: :Title (:Title)
+
+SubDataPropertyOf(:Title owl:topDataProperty)
+FunctionalDataProperty(:Title)
+DataPropertyRange(:Title xsd:string)
+
+# Data Property: :TitleAward (:TitleAward)
+
+SubDataPropertyOf(:TitleAward :Title)
+FunctionalDataProperty(:TitleAward)
+DataPropertyDomain(:TitleAward :Award)
+DataPropertyRange(:TitleAward xsd:string)
+
+# Data Property: :TitleChapter (:TitleChapter)
+
+SubDataPropertyOf(:TitleChapter :Title)
+FunctionalDataProperty(:TitleChapter)
+DataPropertyDomain(:TitleChapter :TvSerieChapter)
+DataPropertyRange(:TitleChapter xsd:string)
+
+# Data Property: :TitleSerie (:TitleSerie)
+
+SubDataPropertyOf(:TitleSerie :Title)
+FunctionalDataProperty(:TitleSerie)
+DataPropertyDomain(:TitleSerie :TvSerie)
+DataPropertyRange(:TitleSerie xsd:string)
+
+# Data Property: :TitleSong (:TitleSong)
+
+SubDataPropertyOf(:TitleSong :Title)
+FunctionalDataProperty(:TitleSong)
+DataPropertyDomain(:TitleSong :Song)
+DataPropertyRange(:TitleSong xsd:string)
+
+# Data Property: :YearAwarded (:YearAwarded)
+
+FunctionalDataProperty(:YearAwarded)
+DataPropertyDomain(:YearAwarded :Award)
+DataPropertyRange(:YearAwarded xsd:int)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :Actor (:Actor)
+
+AnnotationAssertion(rdfs:comment :Actor "Subclass of castMember to specify someone taht works as an Actor"@en)
+SubClassOf(:Actor :CastMember)
+
+# Class: :Agent (:Agent)
+
+AnnotationAssertion(rdfs:comment :Agent "Class to define someone as someone that does something o takes an active role"@en)
+SubClassOf(:Agent owl:Thing)
+
+# Class: :AnimationSerie (:AnimationSerie)
+
+SubClassOf(:AnimationSerie :TvSerie)
+
+# Class: :Award (:Award)
+
+SubClassOf(:Award owl:Thing)
+SubClassOf(:Award ObjectExactCardinality(1 :isGivenBy :Organization))
+
+# Class: :CastMember (:CastMember)
+
+AnnotationAssertion(rdfs:comment :CastMember "Subclass of Person to specify someone that is a member  of the cast"@en)
+SubClassOf(:CastMember :Person)
+
+# Class: :CinemaAward (:CinemaAward)
+
+SubClassOf(:CinemaAward :Award)
+
+# Class: :ComedySerie (:ComedySerie)
+
+SubClassOf(:ComedySerie :TvSerie)
+
+# Class: :Company (:Company)
+
+SubClassOf(:Company :Organization)
+DisjointClasses(:Company :NonProfitOrganization)
+
+# Class: :Composer (:Composer)
+
+AnnotationAssertion(rdfs:comment :Composer "Subclass of Person to specify someone that works as a composer"@en)
+SubClassOf(:Composer :Person)
+
+# Class: :Country (:Country)
+
+AnnotationAssertion(rdfs:comment :Country "Subclass of Localization to define a Country as a geographical place"@en)
+AnnotationAssertion(rdfs:sameAs :Country "https://dbpedia.org/ontology/country"@en)
+SubClassOf(:Country :Localization)
+
+# Class: :CreativeWork (:CreativeWork)
+
+SubClassOf(:CreativeWork owl:Thing)
+
+# Class: :Director (:Director)
+
+AnnotationAssertion(rdfs:comment :Director "Subclass of NonCastMember to specify someone that directs the production of a tv serie"@en)
+SubClassOf(:Director :NonCastMember)
+
+# Class: :DramaSerie (:DramaSerie)
+
+SubClassOf(:DramaSerie :TvSerie)
+
+# Class: :EmmyAward (:EmmyAward)
+
+SubClassOf(:EmmyAward :TvAward)
+
+# Class: :GlaadMediaAward (:GlaadMediaAward)
+
+SubClassOf(:GlaadMediaAward :TvAward)
+
+# Class: :LeadRole (:LeadRole)
+
+SubClassOf(:LeadRole :Role)
+DisjointClasses(:LeadRole :SupportingRole)
+
+# Class: :Localization (:Localization)
+
+AnnotationAssertion(rdfs:comment :Localization "Class for define a place"@en)
+SubClassOf(:Localization owl:Thing)
+
+# Class: :NonCastMember (:NonCastMember)
+
+AnnotationAssertion(rdfs:comment :NonCastMember "Subclass of Person to specify somene that has a role in a production different from being part of the cast"@en)
+SubClassOf(:NonCastMember :Person)
+
+# Class: :NonProfitOrganization (:NonProfitOrganization)
+
+AnnotationAssertion(rdfs:comment :NonProfitOrganization "Subclass of Organization to specify a NonProfit one"@en)
+SubClassOf(:NonProfitOrganization :Organization)
+
+# Class: :Organization (:Organization)
+
+AnnotationAssertion(rdfs:comment :Organization "SubClass of Agent to define an Organization or group of people"@en)
+SubClassOf(:Organization :Agent)
+
+# Class: :Person (:Person)
+
+AnnotationAssertion(rdfs:comment :Person "Subclass of Agent to specify an individual"@en)
+AnnotationAssertion(rdfs:sameAs :Person "https://dbpedia.org/ontology/person"@en)
+SubClassOf(:Person :Agent)
+
+# Class: :RealitySerie (:RealitySerie)
+
+SubClassOf(:RealitySerie :TvSerie)
+
+# Class: :Role (:Role)
+
+SubClassOf(:Role owl:Thing)
+
+# Class: :Singer (:Singer)
+
+AnnotationAssertion(rdfs:comment :Singer "Subclass of Person to specify someone that works as a singer"@en)
+AnnotationAssertion(rdfs:sameAs :Singer "https://dbpedia.org/ontology/Singer"@en)
+SubClassOf(:Singer :Person)
+
+# Class: :Song (:Song)
+
+SubClassOf(:Song :CreativeWork)
+
+# Class: :Soundtrack (:Soundtrack)
+
+SubClassOf(:Soundtrack :CreativeWork)
+
+# Class: :SupportingRole (:SupportingRole)
+
+SubClassOf(:SupportingRole :Role)
+
+# Class: :TerrorSerie (:TerrorSerie)
+
+SubClassOf(:TerrorSerie :TvSerie)
+
+# Class: :ThrillerSerie (:ThrillerSerie)
+
+SubClassOf(:ThrillerSerie :TvSerie)
+
+# Class: :TvAward (:TvAward)
+
+SubClassOf(:TvAward :Award)
+
+# Class: :TvProducer (:TvProducer)
+
+SubClassOf(:TvProducer :Company)
+
+# Class: :TvSerie (:TvSerie)
+
+SubClassOf(:TvSerie :CreativeWork)
+
+# Class: :TvSerieChapter (:TvSerieChapter)
+
+SubClassOf(:TvSerieChapter :CreativeWork)
+
+# Class: :TvSerieSeason (:TvSerieSeason)
+
+SubClassOf(:TvSerieSeason :CreativeWork)
+
+# Class: :Writer (:Writer)
+
+AnnotationAssertion(rdfs:comment :Writer "Subclass of NonCastMember to specify someone that writes the plot of a tv serie"@en)
+SubClassOf(:Writer :NonCastMember)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :Alvaro_Rico (:Alvaro_Rico)
+
+ClassAssertion(:Actor :Alvaro_Rico)
+
+# Individual: :Carlos_Montero (:Carlos_Montero)
+
+ClassAssertion(:Writer :Carlos_Montero)
+
+# Individual: :CharlieXCX (:CharlieXCX)
+
+ClassAssertion(:Composer :CharlieXCX)
+ClassAssertion(:Singer :CharlieXCX)
+
+# Individual: :Dani_de_la_Orden (:Dani_de_la_Orden)
+
+ClassAssertion(:Director :Dani_de_la_Orden)
+
+# Individual: :Elite (:Elite)
+
+ClassAssertion(:CreativeWork :Elite)
+ObjectPropertyAssertion(:hasWon :Elite :GlaadMediaAward_2019_MejorGuion)
+
+# Individual: :EliteSeason1 (:EliteSeason1)
+
+ClassAssertion(:TvSerieSeason :EliteSeason1)
+
+# Individual: :EliteSeason2 (:EliteSeason2)
+
+ClassAssertion(:TvSerieSeason :EliteSeason2)
+
+# Individual: :EliteSeason3 (:EliteSeason3)
+
+ClassAssertion(:TvSerieSeason :EliteSeason3)
+
+# Individual: :EliteSeason4 (:EliteSeason4)
+
+ClassAssertion(:TvSerieSeason :EliteSeason4)
+
+# Individual: :EliteSeason5 (:EliteSeason5)
+
+ClassAssertion(:TvSerieSeason :EliteSeason5)
+
+# Individual: :GLAAD (:GLAAD)
+
+ClassAssertion(:NonProfitOrganization :GLAAD)
+ObjectPropertyAssertion(:GivesAward :GLAAD :GlaadMediaAward_2019_MejorGuion)
+
+# Individual: :GlaadMediaAward_2019_MejorGuion (:GlaadMediaAward_2019_MejorGuion)
+
+ClassAssertion(:GlaadMediaAward :GlaadMediaAward_2019_MejorGuion)
+
+# Individual: :Itzan_Escamilla (:Itzan_Escamilla)
+
+ClassAssertion(:Actor :Itzan_Escamilla)
+
+# Individual: :Manu_Rios (:Manu_Rios)
+
+ClassAssertion(:Actor :Manu_Rios)
+ObjectPropertyAssertion(:ActsAs :Manu_Rios :Patrick)
+
+# Individual: :Maria_Pedraza (:Maria_Pedraza)
+
+ClassAssertion(:Actor :Maria_Pedraza)
+ObjectPropertyAssertion(:ActsAs :Maria_Pedraza :Marina)
+
+# Individual: :Marina (:Marina)
+
+ClassAssertion(:LeadRole :Marina)
+DataPropertyAssertion(:NameRole :Marina "Marina"^^xsd:string)
+DataPropertyAssertion(:SurnameRole :Marina "Numier"^^xsd:string)
+
+# Individual: :Omar (:Omar)
+
+ClassAssertion(:LeadRole :Omar)
+
+# Individual: :Omar_Ayuso (:Omar_Ayuso)
+
+ClassAssertion(:Actor :Omar_Ayuso)
+ObjectPropertyAssertion(:ActsAs :Omar_Ayuso :Omar)
+
+# Individual: :Patrick (:Patrick)
+
+ClassAssertion(:Role :Patrick)
+ObjectPropertyAssertion(:isACharacterOf :Patrick :T05_E01_._Yo_lo_mate)
+ObjectPropertyAssertion(:isACharacterOf :Patrick :T05_E02_._Todo_vale)
+ObjectPropertyAssertion(:isACharacterOf :Patrick :T05_E03_._Atame)
+ObjectPropertyAssertion(:isACharacterOf :Patrick :T05_E04_._El_cuerpo)
+DataPropertyAssertion(:NameRole :Patrick "Patrick"^^xsd:string)
+DataPropertyAssertion(:SurnameRole :Patrick "Blanco"^^xsd:string)
+
+# Individual: :Polo (:Polo)
+
+ClassAssertion(:LeadRole :Polo)
+DataPropertyAssertion(:NameRole :Polo "Polo"^^xsd:string)
+DataPropertyAssertion(:SurnameRole :Polo "Benavent"^^xsd:string)
+
+# Individual: :Samuel (:Samuel)
+
+ClassAssertion(:LeadRole :Samuel)
+ObjectPropertyAssertion(:isACharacterOf :Samuel :T01_E01_·_Episodio_1)
+ObjectPropertyAssertion(:isACharacterOf :Samuel :T05_E01_._Yo_lo_mate)
+ObjectPropertyAssertion(:isInterpretedBy :Samuel :Itzan_Escamilla)
+DataPropertyAssertion(:Name :Samuel "Samuel"^^xsd:string)
+DataPropertyAssertion(:Surname :Samuel "Garcia"^^xsd:string)
+
+# Individual: :T01_E01_·_Episodio_1 (:T01_E01_·_Episodio_1)
+
+ClassAssertion(:TvSerieChapter :T01_E01_·_Episodio_1)
+DataPropertyAssertion(:ReleaseDate :T01_E01_·_Episodio_1 "2018-10-05T00:00:00"^^xsd:dateTime)
+DataPropertyAssertion(:Title :T01_E01_·_Episodio_1 "Episodio 1"^^xsd:string)
+
+# Individual: :T05_E01_._Yo_lo_mate (:T05_E01_._Yo_lo_mate)
+
+ClassAssertion(:TvSerieChapter :T05_E01_._Yo_lo_mate)
+DataPropertyAssertion(:Name :T05_E01_._Yo_lo_mate "Yo lo mate"^^xsd:string)
+DataPropertyAssertion(:ReleaseDate :T05_E01_._Yo_lo_mate "2022-04-08T00:00:00"^^xsd:dateTime)
+
+# Individual: :T05_E02_._Todo_vale (:T05_E02_._Todo_vale)
+
+ClassAssertion(:TvSerieChapter :T05_E02_._Todo_vale)
+DataPropertyAssertion(:ReleaseDate :T05_E02_._Todo_vale "2022-04-08T00:00:00"^^xsd:dateTime)
+DataPropertyAssertion(:Title :T05_E02_._Todo_vale "Todo vale"^^xsd:string)
+
+# Individual: :T05_E03_._Atame (:T05_E03_._Atame)
+
+ClassAssertion(:TvSerieChapter :T05_E03_._Atame)
+DataPropertyAssertion(:ReleaseDate :T05_E03_._Atame "2022-04-08T00:00:00"^^xsd:dateTime)
+DataPropertyAssertion(:Title :T05_E03_._Atame "Atame"^^xsd:string)
+
+# Individual: :T05_E04_._El_cuerpo (:T05_E04_._El_cuerpo)
+
+ClassAssertion(:TvSerieChapter :T05_E04_._El_cuerpo)
+DataPropertyAssertion(:ReleaseDate :T05_E04_._El_cuerpo "2022-04-08T00:00:00"^^xsd:dateTime)
+DataPropertyAssertion(:Title :T05_E04_._El_cuerpo "El cuerpo"^^xsd:string)
+
+# Individual: :ZetaStudiosProductions (:ZetaStudiosProductions)
+
+ClassAssertion(:TvProducer :ZetaStudiosProductions)
+ObjectPropertyAssertion(:Produces :ZetaStudiosProductions :Elite)
+
+# Individual: <http://www.semanticweb.org/andres/ontologies/2022/3/OntologyTvSeries#5_in_the_morning> (<http://www.semanticweb.org/andres/ontologies/2022/3/OntologyTvSeries#5_in_the_morning>)
+
+ClassAssertion(:Song <http://www.semanticweb.org/andres/ontologies/2022/3/OntologyTvSeries#5_in_the_morning>)
+
+
+DLSafeRule(Body(ObjectPropertyAtom(:hasWon Variable(<urn:swrl:var#c>) Variable(<urn:swrl:var#a>)) ClassAtom(:TvAward Variable(<urn:swrl:var#a>)) ClassAtom(:CreativeWork Variable(<urn:swrl:var#c>)))Head(ClassAtom(:TvSerie Variable(<urn:swrl:var#c>))))
+DLSafeRule(Body(ClassAtom(:Role Variable(<urn:swrl:var#r>)) ObjectPropertyAtom(:isACharacterOf Variable(<urn:swrl:var#r>) Variable(<urn:swrl:var#e3>)) ObjectPropertyAtom(:isACharacterOf Variable(<urn:swrl:var#r>) Variable(<urn:swrl:var#e1>)) ObjectPropertyAtom(:isACharacterOf Variable(<urn:swrl:var#r>) Variable(<urn:swrl:var#e2>)) ClassAtom(:TvSerieChapter Variable(<urn:swrl:var#e3>)) ClassAtom(:TvSerieChapter Variable(<urn:swrl:var#e1>)) ClassAtom(:TvSerieChapter Variable(<urn:swrl:var#e2>)))Head(ClassAtom(:LeadRole Variable(<urn:swrl:var#r>))))
+)
